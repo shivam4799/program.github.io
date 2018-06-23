@@ -3,6 +3,9 @@ body{
   margin: 0;
 
 }
+.sidebar, main{
+  padding-top:20px;
+}
 
 pre{
   background: #eeeeee;
@@ -16,4 +19,18 @@ padding: 0;
 .output pre{
   border-radius: 12px;
 
+}
+.navbar-light .navbar-nav .nav-link {
+  color:#fff;
+  font-size: 25px;
+  padding-left: 20px;
+
+}
+.navbar-light .navbar-nav{
+  padding-left: 70px;
+
+}
+.navbar-light .navbar-brand{
+  color:#fff;
+  font-size: 32px;
 }

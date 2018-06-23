@@ -15,10 +15,28 @@
   </head>
 
   <body>
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+          <a class="navbar-brand" href="#">Program</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="c.html">C</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="java.html">Java</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
     <div class="container-fluid">
       <div class="row">
         <nav class="col-lg-2  bg-light sidebar">
-            <br><br><br>
             <ol class="nav flex-column  ">
               <li class="nav-item">
                 <a class="nav-link" href="palindrome.html">
@@ -57,85 +75,82 @@
             <div class="row">
               <div class="col-md-6">
                 <h2>Program in C :</h2>
-<pre><code>
+<pre id="c"><code>
   #include &lt;stdio.h&gt;
-  void thirdLargest(int arr[], int arr_size)
-  {
-      if (arr_size < 3)
+      void thirdLargest(int arr[], int arr_size)
       {
-          printf(" Invalid Input ");
-          return;
+          if (arr_size < 3)
+          {
+              printf(" Invalid Input ");
+              return;
+          }
+       
+          // Find first largest element
+          int first = arr[0];
+          for (int i = 1; i < arr_size ; i++)
+              if (arr[i] > first)
+                  first = arr[i];
+       
+         int INT_MIN = arr[0];
+     
+        for (int i = 1 ; i < arr_size ; i++ ) 
+            if ( arr[i] < INT_MIN ) 
+              INT_MIN = arr[i];
+
+          // Find second largest element
+          int second = INT_MIN;
+          for (int i = 0; i < arr_size ; i++)
+              if (arr[i] > second && arr[i] < first)
+                  second = arr[i];
+       
+          // Find third largest element
+          int third = INT_MIN;
+          for (int i = 0; i < arr_size ; i++)
+              if (arr[i] > third && arr[i] < second)
+                  third = arr[i];
+       
+          printf("The third Largest element is %d\n", third);
       }
-   
-      // Find first largest element
-      int first = arr[0];
-      for (int i = 1; i < arr_size ; i++)
-          if (arr[i] > first)
-              first = arr[i];
-   
-      // Find second largest element
-      int second = INT_MIN;
-      for (int i = 0; i < arr_size ; i++)
-          if (arr[i] > second && arr[i] < first)
-              second = arr[i];
-   
-      // Find third largest element
-      int third = INT_MIN;
-      for (int i = 0; i < arr_size ; i++)
-          if (arr[i] > third && arr[i] < second)
-              third = arr[i];
-   
-      printf("The third Largest element is %d\n", third);
-  }
-   
-  int main()
-  {
-      int arr[] = {12, 13, 1, 10, 34, 16};
-      int n = sizeof(arr)/sizeof(arr[0]);
-      thirdLargest(arr, n);
-      return 0;
-  }
+       
+      int main()
+      {
+          int arr[] = {12, 13, 1, 10, 34, 16};
+          int n = sizeof(arr)/sizeof(arr[0]);
+          thirdLargest(arr, n);
+          return 0;
+      }
 </code></pre>
               </div>
               <div class="col-md-6">
                 <h2>Program in JAVA :</h2>
-<pre><code>
-    class BubbleSort
-    {
-        void bubbleSort(int arr[])
-        {
-            int n = arr.length;
-            for (int i = 0; i < n-1; i++)
-                for (int j = 0; j < n-i-1; j++)
-                    if (arr[j] > arr[j+1])
-                    {
-                        // swap temp and arr[i]
-                        int temp = arr[j];
-                        arr[j] = arr[j+1];
-                        arr[j+1] = temp;
-                    }
-        }
+<pre id="java"><code>
+
+    // in an array
+    import java.util.Arrays;
+    import java.util.Collections;
      
-        /* Prints the array */
-        void printArray(int arr[])
+    class GFG
+    {   
+        // element in a given array
+        public static int largest(Integer [] arr, 
+                                             int arr_size) 
         {
-            int n = arr.length;
-            for (int i=0; i < n; ++i)
-                System.out.print(arr[i] + " ");
-            System.out.println();
-        }
-     
-        // Driver method to test above
-        public static void main(String args[])
+            // Sort the given array
+            Arrays.sort(arr);
+    
+            return arr[arr_size-3];
+        } 
+         
+        public static void main(String[] args) 
         {
-            BubbleSort ob = new BubbleSort();
-            int arr[] = {64, 34, 25, 12, 22, 11, 90};
-            ob.bubbleSort(arr);
-            System.out.println("Sorted array");
-            ob.printArray(arr);
+            Integer arr[] = new Integer[]{12, 3, 5, 7, 19};
+            int arr_size = arr.length;
+            System.out.print( "3'rd largest element is "+
+                                largest(arr, arr_size) );     
         }
     }
-
+     
+    
 </code></pre>
   </div>
 
@@ -150,5 +165,26 @@
         </main>
       </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function(){
+     
+      $('#c').on('click', function(){
+        window.getSelection().selectAllChildren( document.getElementById('c') );
+      });
+      $('#java').on('click', function(){
+        window.getSelection().selectAllChildren( document.getElementById('java') );
+      });
+      // 
+      });
+    </script>
   </body>
 </html>
