@@ -1,0 +1,132 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Palindrome Program</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-lg-2  bg-light sidebar">
+            <br><br><br>
+            <ol class="nav flex-column  ">
+              <li class="nav-item">
+                <a class="nav-link" href="palindrome.html">
+                PALINDROME PROGRAM
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="fibonacci.html">
+                  FIBONACCI SERIES
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="factorial.html">
+                  FACTORIAL NUMBER
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bubble.html">
+                  BUBBLE SHORT
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="3larray.html">
+                  FIND 3RD LARGEST NUMBER IN AN ARRAY
+                </a>
+              </li>
+            </ol>
+        </nav>
+
+        <main class="col-lg-10">
+            <h1>Palindrome</h1>
+            <h4>Palindrome in C language or C program to check if a string or number is palindrome or not. C program to check if a number is a palindrome or not. A palindrome string is a string that reads the same backward as forward and can be of odd or even length. A palindrome number is a number which is equal to its reverse</h4>
+            <br>
+            <br>
+            <h4>Check palindrome number algorithm</h4>
+            <ol>
+              <li>Get the number from a user.</li>
+              <li>Reverse it.</li>
+              <li>Compare it with the number entered by the user.</li>
+              <li>If both are the same then print palindrome number else print not a palindrome number.</li>
+            </ol>
+      
+            <div class="row">
+              <div class="col-md-6">
+                <h2>Program in C :</h2>
+<pre><code>
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+  int main()
+  {
+    char a[100], b[100];
+    
+    printf("Enter a string to check if it is a palindrome\n");
+    gets(a);
+    
+    strcpy(b,a);
+    strrev(b);
+    
+    if (strcmp(a,b) == 0)
+    printf("Entered string is a palindrome.\n");
+    else
+    printf("Entered string isn't a palindrome.\n");
+    
+    return 0;
+  }
+</code></pre>
+              </div>
+              <div class="col-md-6">
+                <h2>Program in JAVA :</h2>
+<pre><code>
+  public class Palindrome {
+
+      public static void main(String[] args) {
+  
+          int num = 121, reversedInteger = 0, remainder, originalInteger;
+  
+          originalInteger = num;
+  
+          // reversed integer is stored in variable 
+          while( num != 0 )
+          {
+              remainder = num % 10;
+              reversedInteger = reversedInteger * 10 + remainder;
+              num  /= 10;
+          }
+  
+          // palindrome if orignalInteger and reversedInteger are equal
+          if (originalInteger == reversedInteger)
+              System.out.println(originalInteger + " is a palindrome.");
+          else
+              System.out.println(originalInteger + " is not a palindrome.");
+      }
+  }
+</code></pre>
+            </div>
+            <div class="output">
+                <h3>Output:</h3>
+<pre><code>
+    Enter a string to check if it is a palindrome       
+    12321
+    Entered string is a palindrome.
+    
+</code></pre>
+            </div>>
+           </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bubble Sort</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-lg-2  bg-light sidebar">
+            <br><br><br>
+            <ol class="nav flex-column  ">
+              <li class="nav-item">
+                <a class="nav-link" href="palindrome.html">
+                PALINDROME PROGRAM
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="fibonacci.html">
+                  FIBONACCI SERIES
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="factorial.html">
+                  FACTORIAL NUMBER
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bubble.html">
+                  BUBBLE SHORT
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="3larray.html">
+                  FIND 3RD LARGEST NUMBER IN AN ARRAY
+                </a>
+              </li>
+            </ol>
+        </nav>
+
+        <main class="col-lg-10">
+            <h1>Bubble Sort</h1>
+            <h4>Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order</h4>
+            <br>
+            <br>
+            <h4>Check palindrome number algorithm</h4>
+      
+            <div class="row">
+              <div class="col-md-6">
+                <h2>Program in C :</h2>
+<pre><code>
+  #include &lt;stdio.h&gt;
+  int main()
+  {
+    int array[100], n, c, d, swap;
+   
+    printf("Enter number of elements\n");
+    scanf("%d", &n);
+   
+    printf("Enter %d integers\n", n);
+   
+    for (c = 0; c < n; c++)
+      scanf("%d", &array[c]);
+   
+    for (c = 0 ; c < n - 1; c++)
+    {
+      for (d = 0 ; d < n - c - 1; d++)
+      {
+        if (array[d] > array[d+1]) /* For decreasing order use < */
+        {
+          swap       = array[d];
+          array[d]   = array[d+1];
+          array[d+1] = swap;
+        }
+      }
+    }
+   
+    printf("Sorted list in ascending order:\n");
+   
+    for (c = 0; c < n; c++)
+       printf("%d\n", array[c]);
+   
+    return 0;
+  }
+</code></pre>
+              </div>
+              <div class="col-md-6">
+                <h2>Program in JAVA :</h2>
+<pre><code>
+    #include &lt;stdio.h&gt;
+    #include &lt;string.h&gt;
+    int main()
+    {
+      char a[100], b[100];
+      
+      printf("Enter a string to check if it is a palindrome\n");
+      gets(a);
+      
+      strcpy(b,a);
+      strrev(b);
+      
+      if (strcmp(a,b) == 0)
+      printf("Entered string is a palindrome.\n");
+      else
+      printf("Entered string isn't a palindrome.\n");
+      
+      return 0;
+    }
+</code></pre>
+            </div>
+            <div class="output">
+                <h3>Output:</h3>
+<pre><code>
+    Sorted array:
+    11 12 22 25 34 64 90          
+
+</code></pre> 
+            </div>>
+           </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

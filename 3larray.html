@@ -1,0 +1,154 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>3RD Largest In Array</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-lg-2  bg-light sidebar">
+            <br><br><br>
+            <ol class="nav flex-column  ">
+              <li class="nav-item">
+                <a class="nav-link" href="palindrome.html">
+                PALINDROME PROGRAM
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="fibonacci.html">
+                  FIBONACCI SERIES
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="factorial.html">
+                  FACTORIAL NUMBER
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bubble.html">
+                  BUBBLE SHORT
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="3larray.html">
+                  FIND 3RD LARGEST NUMBER IN AN ARRAY
+                </a>
+              </li>
+            </ol>
+        </nav>
+
+        <main class="col-lg-10">
+            <h1>Third largest element in an array</h1>
+            <h4>Simplest way to solve this question is to first iterate through the array and find first maximum. Store this first maximum as well as its index. Now traverse the whole array finding the second max with the changed condition. Finally traverse the array third time and find the third largest element.</h4>
+            <br>
+            <br>
+      
+            <div class="row">
+              <div class="col-md-6">
+                <h2>Program in C :</h2>
+<pre><code>
+  #include &lt;stdio.h&gt;
+  void thirdLargest(int arr[], int arr_size)
+  {
+      if (arr_size < 3)
+      {
+          printf(" Invalid Input ");
+          return;
+      }
+   
+      // Find first largest element
+      int first = arr[0];
+      for (int i = 1; i < arr_size ; i++)
+          if (arr[i] > first)
+              first = arr[i];
+   
+      // Find second largest element
+      int second = INT_MIN;
+      for (int i = 0; i < arr_size ; i++)
+          if (arr[i] > second && arr[i] < first)
+              second = arr[i];
+   
+      // Find third largest element
+      int third = INT_MIN;
+      for (int i = 0; i < arr_size ; i++)
+          if (arr[i] > third && arr[i] < second)
+              third = arr[i];
+   
+      printf("The third Largest element is %d\n", third);
+  }
+   
+  int main()
+  {
+      int arr[] = {12, 13, 1, 10, 34, 16};
+      int n = sizeof(arr)/sizeof(arr[0]);
+      thirdLargest(arr, n);
+      return 0;
+  }
+</code></pre>
+              </div>
+              <div class="col-md-6">
+                <h2>Program in JAVA :</h2>
+<pre><code>
+    class BubbleSort
+    {
+        void bubbleSort(int arr[])
+        {
+            int n = arr.length;
+            for (int i = 0; i < n-1; i++)
+                for (int j = 0; j < n-i-1; j++)
+                    if (arr[j] > arr[j+1])
+                    {
+                        // swap temp and arr[i]
+                        int temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                    }
+        }
+     
+        /* Prints the array */
+        void printArray(int arr[])
+        {
+            int n = arr.length;
+            for (int i=0; i < n; ++i)
+                System.out.print(arr[i] + " ");
+            System.out.println();
+        }
+     
+        // Driver method to test above
+        public static void main(String args[])
+        {
+            BubbleSort ob = new BubbleSort();
+            int arr[] = {64, 34, 25, 12, 22, 11, 90};
+            ob.bubbleSort(arr);
+            System.out.println("Sorted array");
+            ob.printArray(arr);
+        }
+    }
+
+</code></pre>
+  </div>
+
+  <div class="output">
+    <h3>Output:</h3>
+<pre><code>        
+      The third Largest element is 13           
+
+</code></pre>
+</div>>        
+           </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

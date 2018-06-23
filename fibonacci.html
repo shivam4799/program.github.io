@@ -1,0 +1,131 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Fibonacci Series</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-lg-2  bg-light sidebar">
+            <br><br><br>
+            <ol class="nav flex-column  ">
+              <li class="nav-item">
+                <a class="nav-link" href="palindrome.html">
+                PALINDROME PROGRAM
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="fibonacci.html">
+                  FIBONACCI SERIES
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="factorial.html">
+                  FACTORIAL NUMBER
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="bubble.html">
+                  BUBBLE SHORT
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="3larray.html">
+                  FIND 3RD LARGEST NUMBER IN AN ARRAY
+                </a>
+              </li>
+            </ol>
+        </nav>
+
+        <main class="col-lg-10">
+            <h1>Fibonacci Series</h1>
+            <h4>The Fibonacci sequence is a series of numbers where a number is the sum of previous two numbers. Starting with 0 and 1, the sequence goes 0, 1, 1, 2, 3, 5, 8, 13, 21, and so on.</h4>
+            <br>
+            <br>
+            <h4>Check palindrome number algorithm</h4>
+            <ol>
+              <li>First initialize two number of the Fibonacci sequence is 0 & 1.</li>
+              <li>Next term is the sum of pervious two terms.</li>
+              <li>Print that number.</li>
+            </ol>
+      
+            <div class="row">
+              <div class="col-md-6">
+                <h2>Program in C :</h2>
+<pre><code>
+  #include &lt;stdio.h&gt;
+  #include &lt;string.h&gt;
+  int main()
+  {
+    int n, first = 0, second = 1, next, c;
+    
+    printf("Enter the number of terms\n");
+    scanf("%d", &n);
+    
+    printf("First %d terms of Fibonacci series are:\n", n);
+    
+    for (c = 0; c < n; c++)
+    {
+      if (c <= 1)
+        next = c;
+      else
+      {
+        next = first + second;
+        first = second;
+        second = next;
+      }
+      printf("%d\n", next);
+    }
+    
+    return 0;
+  }
+</code></pre>
+              </div>
+              <div class="col-md-6">
+                <h2>Program in JAVA :</h2>
+<pre><code>
+    public class Fibonacci {
+
+      public static void main(String[] args) {
+  
+          int n = 10, t1 = 0, t2 = 1;
+          System.out.print("First " + n + " terms: ");
+  
+          for (int i = 1; i <= n; ++i)
+          {
+              System.out.print(t1 + " + ");
+  
+              int sum = t1 + t2;
+              t1 = t2;
+              t2 = sum;
+          }
+      }
+  }
+  
+</code></pre>
+            </div>
+            <div class="output">
+                <h3>Output:</h3>
+<pre><code>
+    First 7 terms of Fibonacci series are:         
+    0 1 1 2 3 5 8
+
+</code></pre>
+            </div>>
+           </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

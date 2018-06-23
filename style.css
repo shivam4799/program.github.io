@@ -1,0 +1,19 @@
+
+body{
+  margin: 0;
+
+}
+
+pre{
+  background: #eeeeee;
+  /* margin: 0; */
+padding: 0;
+}
+.output{
+  width:auto;
+  margin:5px auto;
+}
+.output pre{
+  border-radius: 12px;
+
+}
